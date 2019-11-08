@@ -1,6 +1,6 @@
 {
   "name": "@booze/geo",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Utility-library containing geographical stuff for Booze",
   "author": "Leon Brandt for Booze",
   "license": "GPL-3.0-or-later",

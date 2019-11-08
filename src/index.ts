@@ -1,7 +1,3 @@
-import { Pos } from "./pos";
-import { Rect } from "./rect";
-import { Boundaries } from "./boundaries";
-
 export const CONSTANTS = {
 	/**
 	 * Mean earth radius in kilometers
@@ -20,4 +16,6 @@ export const CONSTANTS = {
 	MERIDIAN_CIRCUMFERENCE: 20003.93,
 };
 
-export default { Pos, Rect, Boundaries };
+export { Pos } from "./pos";
+export { Rect } from "./rect";
+export { Boundaries } from "./boundaries";
