@@ -1,6 +1,6 @@
-import * as pos from "./pos";
-import * as rect from "./rect";
-import * as boundaries from "./boundaries";
+import { Pos } from "./pos";
+import { Rect } from "./rect";
+import { Boundaries } from "./boundaries";
 
 export const CONSTANTS = {
 	/**
@@ -20,6 +20,4 @@ export const CONSTANTS = {
 	MERIDIAN_CIRCUMFERENCE: 20003.93,
 };
 
-export const Pos = pos.Pos;
-export const Rect = rect.Rect;
-export const Boundaries = boundaries.Boundaries;
+export default { Pos, Rect, Boundaries };
