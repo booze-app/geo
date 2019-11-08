@@ -97,10 +97,10 @@ describe("shift", () => {
 		let p1: Pos = new Pos(0, 0);
 		let p2: Pos = new Pos(0, 0);
 
-		/*expect(p1.shift(0, 1).longitude).toBeGreaterThan(p2.longitude);
+		expect(p1.shift(0, 1).longitude).toBeGreaterThan(p2.longitude);
 		expect(p1.shift(0, 1).latitude).toBe(p2.latitude);
-		expect(p1.shift(0, -1).longitude).toBeLessThan(p2.longitude);
-		expect(p1.shift(0, -1).latitude).toBe(p2.latitude);*/
+		expect(p1.shift(0, -1).longitude).toBeGreaterThan(p2.longitude);
+		expect(p1.shift(0, -1).latitude).toBe(p2.latitude);
 
 	});
 
