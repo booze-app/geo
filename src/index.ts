@@ -19,3 +19,4 @@ export const CONSTANTS = {
 export { Pos } from "./pos";
 export { Rect } from "./rect";
 export { Boundaries } from "./boundaries";
+export { PosList } from "./poslist";
