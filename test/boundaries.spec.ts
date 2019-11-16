@@ -1,6 +1,4 @@
-import { Boundaries } from "../src/boundaries";
-import { Rect } from "../src/rect";
-import { Pos } from "../src/pos";
+import { Boundaries, Rect, Pos } from "../src";
 
 describe("constructor", () => {
 

@@ -1,5 +1,5 @@
 import { CONSTANTS } from "../src";
-import { Pos } from "../src/pos";
+import { Pos } from "../src";
 
 describe("constructor", () => {
 
