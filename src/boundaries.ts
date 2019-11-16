@@ -1,3 +1,5 @@
+import { Pos } from "./pos";
+
 /**
  * Represents the latitude and longitude a Rect is bounded by
  */
@@ -23,6 +25,22 @@ export class Boundaries {
 		this.right = right;
 		this.bottom = bottom;
 		this.left = left;
+	}
+
+	/**
+	 * Checks if a given position is contained within the Boundaries
+	 *
+	 * @param {Pos} pos The Pos to check if it is contained in the Boundaries
+	 * @return {boolean} True if the given pos is contained in the Boundaries
+	 */
+	public contains(pos: Pos): boolean {
+		return (
+			(
+				(this.left < this.right && (pos.longitude > this.left && pos.longitude < this.right)) // left < right
+				|| (this.left > this.right && !(pos.longitude < this.left && pos.longitude > this.right)) // left > right
+			)
+			&& (pos.latitude > this.bottom && pos.latitude < this.top)
+		);
 	}
 
 }

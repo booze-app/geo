@@ -69,15 +69,7 @@ export class Rect {
 	 * @return {boolean} True if the given pos is contained in the Rect
 	 */
 	public contains(pos: Pos): boolean {
-		let b: Boundaries = this.boundaries();
-
-		return (
-			(
-				(b.left < b.right && (pos.longitude > b.left && pos.longitude < b.right)) // left < right
-				|| (b.left > b.right && !(pos.longitude < b.left && pos.longitude > b.right)) // left > right
-			)
-			&& (pos.latitude > b.bottom && pos.latitude < b.top)
-		);
+		return this.boundaries().contains(pos);
 	}
 
 }
