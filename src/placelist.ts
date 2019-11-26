@@ -1,10 +1,10 @@
-import { Place } from "place";
-import { NearbySearchResult, PlaceResult } from "googlePlaceTypes";
-import { Pos } from "pos";
-import { Rect } from "rect";
+import { Place } from "./place";
+import { NearbySearchResult, PlaceResult } from "./googlePlaceTypes";
+import { Pos } from "./pos";
+import { Rect } from "./rect";
 
 export class PlaceList {
-    public places : Place[]; 
+    readonly places : Place[]; 
 
     constructor(places?: Place[]) {
         if(places)
@@ -18,7 +18,7 @@ export class PlaceList {
             throw Error("There are zero places to convert in the request");        
         
         if(!append)
-            this.places = [];
+            this.places.length = 0;
 
         for(let placeResult of req.results){
             this.places.push(this.convertPlaceResult(placeResult));
@@ -39,10 +39,21 @@ export class PlaceList {
         return this.sortList((a: Place, b: Place) => pos.distance(b.location) - pos.distance(a.location), override);
     }
 
+    public getList() : Place[] {
+        return this.places;
+    }
+
+    public addPlace(place: Place) : void {
+        this.places.push(place);
+    }
+
     private sortList(sortMethod: (a: Place, b: Place) => number, replace: boolean = false) : Place[] {
         let sortedList = this.places.sort(sortMethod);
         if(replace)
-            this.places = sortedList;
+        {
+            this.places.length = 0;
+            this.places.push(...sortedList);            
+        }
         return sortedList;
     }
 

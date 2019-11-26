@@ -1,4 +1,4 @@
-import { Pos } from "pos"
+import { Pos } from "./pos"
 
 export class Place {
     public id : string;
