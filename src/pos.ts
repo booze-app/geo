@@ -70,4 +70,21 @@ export class Pos {
 		return rect.contains(this);
 	}
 
+	public distance(dest: Pos): number {
+		let dLat = this.convertDegreesToRadiant(dest.latitude - this.latitude);  
+        let dLon = this.convertDegreesToRadiant(dest.longitude - this.longitude); 
+        let a = 
+            Math.sin(dLat/2) * Math.sin(dLat/2) +
+            Math.cos(this.convertDegreesToRadiant(this.latitude)) * Math.cos(this.convertDegreesToRadiant(dest.latitude)) * 
+            Math.sin(dLon/2) * Math.sin(dLon/2);
+                                                 
+            let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+            let d = CONSTANTS.EARTH_RADIUS * c;
+            return d;
+	}
+
+	private convertDegreesToRadiant(deg: number) : number {
+		return deg * (Math.PI / 180);
+	}
+
 }
