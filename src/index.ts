@@ -22,4 +22,4 @@ export { Boundaries } from "./boundaries";
 export { PosList } from "./poslist";
 export { PlaceList } from "./placelist";
 export { Place } from "./place";
-export { NearbySearchResult, PlaceResult } from "./googlePlaceTypes";
+export { NearbySearchResult, PlaceResult, PlacesServiceStatus } from "./googlePlaceTypes";
