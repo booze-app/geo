@@ -4,7 +4,7 @@ import { Pos } from "./pos";
 import { Rect } from "./rect";
 
 export class PlaceList {
-    readonly places : Place[]; 
+    public places : Place[]; 
 
     constructor(places?: Place[]) {
         if(places)
@@ -18,7 +18,7 @@ export class PlaceList {
             throw Error("There are zero places to convert in the request");        
         
         if(!append)
-            this.places.length = 0;
+            this.places = [];
 
         for(let placeResult of req.results){
             this.places.push(this.convertPlaceResult(placeResult));
@@ -34,24 +34,28 @@ export class PlaceList {
         }
         return null;
     }
-
-    public sortListDistancesShort(pos: Pos, override: boolean = false) : Place[] {
-        return this.sortList((a: Place, b: Place) => pos.distance(b.location) - pos.distance(a.location), override);
-    }
-
-    public getList() : Place[] {
-        return this.places;
-    }
-
+    
     public addPlace(place: Place) : void {
         this.places.push(place);
+    }
+
+    public addPlaceArray(places: Place[]) : void {
+        this.places.push(...places);
+    }
+
+    public addPlaceList(placeList: PlaceList) : void {
+        this.places.push(...placeList.places);
+    }
+
+    public sortListDistancesShort(pos: Pos, override: boolean = false) : Place[] {
+        return this.sortList((a: Place, b: Place) => pos.distance(a.location) - pos.distance(b.location), override);
     }
 
     private sortList(sortMethod: (a: Place, b: Place) => number, replace: boolean = false) : Place[] {
         let sortedList = this.places.sort(sortMethod);
         if(replace)
         {
-            this.places.length = 0;
+            this.places = [];
             this.places.push(...sortedList);            
         }
         return sortedList;
