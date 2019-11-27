@@ -21,7 +21,7 @@ interface LatLngBounds {
 
 interface PlaceGeometry {
     location: LatLng;
-    viewport: LatLngBounds;
+    viewport?: LatLngBounds;
 }
 
 interface OpeningHoursTime {
@@ -88,7 +88,7 @@ interface PlaceSearchPagination {
     hasNextPage: boolean;
 }
 
-enum PlacesServiceStatus {
+export enum PlacesServiceStatus {
     INVALID_REQUEST = 'INVALID_REQUEST',
     NOT_FOUND = 'NOT_FOUND',
     OK = 'OK',
