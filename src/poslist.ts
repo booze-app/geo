@@ -6,7 +6,7 @@ import { Boundaries } from "./boundaries";
  */
 export class PosList {
 
-	readonly positions: Pos[];
+	public positions: Pos[];
 
 	/**
 	 * Creates an instance of PosList
@@ -55,4 +55,21 @@ export class PosList {
 		return new PosList(this.positions.filter(pos => boundaries.contains(pos)));
 	}
 
+    public findShortestPos(pos: Pos) {
+        return this.sortListDistancesShort(pos)[0];
+    }
+
+    public sortListDistancesShort(pos: Pos, override: boolean = false) : Pos[] {
+        return this.sortList((a: Pos, b: Pos) => pos.distance(a) - pos.distance(b), override);
+    }
+
+    private sortList(sortMethod: (a: Pos, b: Pos) => number, replace: boolean = false) : Pos[] {
+        let sortedList = this.positions.sort(sortMethod);
+        if(replace)
+        {
+            this.positions = [];
+            this.positions.push(...sortedList);            
+        }
+        return sortedList;
+    }
 }

@@ -20,6 +20,3 @@ export { Pos } from "./pos";
 export { Rect } from "./rect";
 export { Boundaries } from "./boundaries";
 export { PosList } from "./poslist";
-export { PlaceList } from "./placelist";
-export { Place } from "./place";
-export { NearbySearchResult, PlaceResult, PlacesServiceStatus } from "./googlePlaceTypes";
