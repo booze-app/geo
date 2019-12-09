@@ -55,14 +55,28 @@ export class PosList {
 		return new PosList(this.positions.filter(pos => boundaries.contains(pos)));
 	}
 
+    /**
+     * Search for the point, who is shortest away from the given point
+     * @param pos The point, who should used to find the nearest point
+     */
     public findShortestPos(pos: Pos) {
         return this.sortListDistancesShort(pos)[0];
     }
 
+    /**
+     * Sort the points from to short to far away given by the point and returns the sorted array
+     * @param pos The point, who is used as indicator
+     * @param override When set true, the list from the instance gets overrided. Default: false
+     */
     public sortListDistancesShort(pos: Pos, override: boolean = false) : Pos[] {
         return this.sortList((a: Pos, b: Pos) => pos.distance(a) - pos.distance(b), override);
     }
 
+    /**
+     * Template function to register new sort methods. It takes a function, who is used in the sort function
+     * @param sortMethod Function, who is used in the sort function   
+     * @param replace When true, the array in the instance gets overriden. Default: false
+     */
     private sortList(sortMethod: (a: Pos, b: Pos) => number, replace: boolean = false) : Pos[] {
         let sortedList = this.positions.sort(sortMethod);
         if(replace)

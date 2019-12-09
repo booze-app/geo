@@ -70,6 +70,10 @@ export class Pos {
 		return rect.contains(this);
 	}
 
+    /**
+     * Returns the distance to the given point in meters
+     * @param {Pos} dest The destination position 
+     */
 	public distance(dest: Pos): number {
 		let dLat = this.convertDegreesToRadiant(dest.latitude - this.latitude);  
         let dLon = this.convertDegreesToRadiant(dest.longitude - this.longitude); 
@@ -83,7 +87,11 @@ export class Pos {
             return d;
 	}
 
-	private convertDegreesToRadiant(deg: number) : number {
+    /**
+     * Convert the given number from degrees to radiants
+     * @param deg The number that should be convert
+     */
+    private convertDegreesToRadiant(deg: number) : number {
 		return deg * (Math.PI / 180);
 	}
 
