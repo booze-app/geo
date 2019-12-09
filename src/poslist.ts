@@ -55,11 +55,11 @@ export class PosList {
 		return new PosList(this.positions.filter(pos => boundaries.contains(pos)));
 	}
 
-    /**
-     * Search for the point, who is shortest away from the given point
-     * @param pos The point, who should used to find the nearest point
-     */
-    public findNearestPos(pos: Pos): Pos {
-        return this.positions.sort((a: Pos, b: Pos) => pos.distance(a) - pos.distance(b))[0];
-    }
+	/**
+	 * Search for the point, who is shortest away from the given point
+	 * @param pos The point, who should used to find the nearest point
+	 */
+	public findNearestPos(pos: Pos): Pos {
+		return this.positions.sort((a: Pos, b: Pos) => pos.distance(a) - pos.distance(b))[0];
+	}
 }
