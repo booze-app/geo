@@ -1,31 +1,31 @@
 {
   "name": "@booze/geo",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Utility-library containing geographical stuff for Booze",
   "author": "Leon Brandt for Booze",
   "license": "GPL-3.0-or-later",
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/booze-app/geo.git"
+	"type": "git",
+	"url": "git+https://github.com/booze-app/geo.git"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "test": "jest --verbose",
-    "build": "tsc"
+	"test": "jest --verbose",
+	"build": "tsc"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.22",
-    "jest": "^24.9.0",
-    "ts-jest": "^24.1.0",
-    "typescript": "^3.7.2"
+	"@types/jest": "^24.0.22",
+	"jest": "^24.9.0",
+	"ts-jest": "^24.1.0",
+	"typescript": "^3.7.2"
   },
   "bugs": {
-    "url": "https://github.com/booze-app/geo/issues"
+	"url": "https://github.com/booze-app/geo/issues"
   },
   "homepage": "https://github.com/booze-app/geo#readme",
   "directories": {
-    "test": "test"
+	"test": "test"
   },
   "dependencies": {}
 }
