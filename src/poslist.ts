@@ -56,10 +56,13 @@ export class PosList {
 	}
 
 	/**
-	 * Search for the point, who is shortest away from the given point
-	 * @param pos The point, who should used to find the nearest point
+	 * Returns the nearest Position in context of a given Position
+	 *
+	 * @param { Pos } pos The context Position
+	 * @returns { Pos } The nearest Position
 	 */
 	public findNearestPos(pos: Pos): Pos {
 		return this.positions.sort((a: Pos, b: Pos) => pos.distance(a) - pos.distance(b))[0];
 	}
+
 }

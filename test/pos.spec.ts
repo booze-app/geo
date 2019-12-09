@@ -119,6 +119,7 @@ describe("shift", () => {
 });
 
 describe("distances", () => {
+
 	test("distance", () => {
 		let p1: Pos = new Pos(0, 0);
 		let p2: Pos = new Pos(1, 1);
@@ -136,4 +137,5 @@ describe("distances", () => {
 		let p2: Pos = new Pos(0.123, 0);
 		expect(parseFloat(p1.distance(p2).toFixed(1))).toBeCloseTo(0.0);
 	});
-})
+
+});

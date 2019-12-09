@@ -150,6 +150,7 @@ describe("subset", () => {
 });
 
 describe("order methods", () => {
+
 	test("find shortest position with given start point", () => {
 		let p0: Pos = new Pos(0.123, 0);
 		let p1: Pos = new Pos(0.1234, 0);
@@ -162,4 +163,5 @@ describe("order methods", () => {
 
 		expect(pl1.findNearestPos(p0)).toBe(p1);
 	});
+
 })
