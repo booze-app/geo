@@ -55,4 +55,14 @@ export class PosList {
 		return new PosList(this.positions.filter(pos => boundaries.contains(pos)));
 	}
 
+	/**
+	 * Returns the nearest Position in context of a given Position
+	 *
+	 * @param { Pos } pos The context Position
+	 * @returns { Pos } The nearest Position
+	 */
+	public findNearestPos(pos: Pos): Pos {
+		return this.positions.sort((a: Pos, b: Pos) => pos.distance(a) - pos.distance(b))[0];
+	}
+
 }

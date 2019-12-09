@@ -148,3 +148,20 @@ describe("subset", () => {
 	});
 
 });
+
+describe("order methods", () => {
+
+	test("find shortest position with given start point", () => {
+		let p0: Pos = new Pos(0.123, 0);
+		let p1: Pos = new Pos(0.1234, 0);
+		let p2: Pos = new Pos(2, 2);
+		let p3: Pos = new Pos(3, 3);
+		let p4: Pos = new Pos(4, 4);
+
+		let pa1: Pos[] = [p4, p2, p1, p3];
+		let pl1 = new PosList(pa1);
+
+		expect(pl1.findNearestPos(p0)).toBe(p1);
+	});
+
+})

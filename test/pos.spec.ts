@@ -117,3 +117,25 @@ describe("shift", () => {
 	});
 
 });
+
+describe("distances", () => {
+
+	test("distance", () => {
+		let p1: Pos = new Pos(0, 0);
+		let p2: Pos = new Pos(1, 1);
+		expect(parseFloat(p1.distance(p2).toFixed(1))).toBeCloseTo(157.2);
+	});
+
+	test("short distance", () => {
+		let p1: Pos = new Pos(0.12, 0);
+		let p2: Pos = new Pos(0.123, 0);
+		expect(parseFloat(p1.distance(p2).toFixed(3))).toBeCloseTo(0.333);
+	});
+
+	test("range is zero when two points are equal", () => {
+		let p1: Pos = new Pos(0.123, 0);
+		let p2: Pos = new Pos(0.123, 0);
+		expect(parseFloat(p1.distance(p2).toFixed(1))).toBeCloseTo(0.0);
+	});
+
+});
